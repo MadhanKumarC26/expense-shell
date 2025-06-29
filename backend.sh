@@ -25,7 +25,7 @@ status_check
 
 
 print_head "add  app"
-mkdir /app -y &>>${LOG}
+mkdir /app  &>>${LOG}
 status_check
 
 
