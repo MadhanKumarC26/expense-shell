@@ -16,12 +16,12 @@ status_check
 
 
 
-  print_head "Add Application User"
-  id Expense &>>${LOG}
-  if [ $? -ne 0 ]; then
-    useradd Expense &>>${LOG}
-  fi
-  status_check
+#   print_head "Add Application User"
+#   id Expense &>>${LOG}
+#   if [ $? -ne 0 ]; then
+#     useradd Expense &>>${LOG}
+#   fi
+#   status_check
 
 
 print_head "add  app"
