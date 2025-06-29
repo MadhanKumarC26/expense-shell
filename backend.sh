@@ -35,7 +35,7 @@ status_check
  
 
 print_head "change  app"
-cd /app -y &>>${LOG}
+cd /app &>>${LOG}
 status_check 
 
 rm -rf /app/* 
