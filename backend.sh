@@ -16,14 +16,12 @@ status_check
 
 
 
-id expense &>>${LOG}
-if [ $? -ne 0 ]
-then
-    useradd expense &>>${LOG}
-    print_head "creates user"
-else
-    echo "Expense user already created"
-fi
+  print_head "Add Application User"
+  id Expense &>>${LOG}
+  if [ $? -ne 0 ]; then
+    useradd Expense &>>${LOG}
+  fi
+  status_check
 
 
 print_head "add  app"
