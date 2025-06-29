@@ -29,7 +29,7 @@ mkdir -p /app  &>>${LOG}
 status_check
 
 
-print_head "download new Nginx content "
+print_head "download new  content "
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>${LOG}
 status_check
  
@@ -37,6 +37,8 @@ status_check
 print_head "change  app"
 cd /app -y &>>${LOG}
 status_check 
+
+rm -rf /app/* 
 
 print_head "unzip content"
 unzip /tmp/backend.zip &>>${LOG}
