@@ -25,12 +25,12 @@ status_check
 
 
 print_head "add  app"
-mkdir /app  &>>${LOG}
+mkdir -p /app  &>>${LOG}
 status_check
 
 
 print_head "download new Nginx content "
-curl -o /tmp/frontend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>${LOG}
+curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>${LOG}
 status_check
  
 
