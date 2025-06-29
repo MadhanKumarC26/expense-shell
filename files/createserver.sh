@@ -7,12 +7,12 @@ hosted_zone_id="Z0315526VM2XQIJLAJDR"
 for name in ${instances[@]}; do
     if [ $name == "mysql" ]
     then
-        instance_type="t3.medium"
-    else
         instance_type="t3.micro"
+    else
+        instance_type="t2.micro"
     fi
     echo "Creating instance for: $name with instance type: $instance_type"
-    instance_id=$(aws ec2 run-instances --image-id ami-09c813fb71547fc4f --instance-type $instance_type --security-group-ids sg-08d86f253ac9d8ab9 --subnet-id subnet-09d9aa8adf3cefce2 --query 'Instances[0].InstanceId' --output text)
+    instance_id=$(aws ec2 run-instances --image-id ami-09c813fb71547fc4f --instance-type $instance_type --security-group-ids sg-08d86f253ac9d8ab9 --subnet-id subnet-001f5e7bb627088e0 --query 'Instances[0].InstanceId' --output text)
     echo "Instance created for: $name"
 
     aws ec2 create-tags --resources $instance_id --tags Key=Name,Value=$name
